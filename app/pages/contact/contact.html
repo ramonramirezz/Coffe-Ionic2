@@ -9,11 +9,11 @@
 <ion-content class="contact">
   <ion-list>
     <!-- <ion-list-header>Follow us on Twitter</ion-list-header> -->
-    <ion-item *ngFor="#frappe of foundFrappe">
+    <ion-item *ngFor="#item of foundFrappe" (click)='openModal(item)'>
       <ion-avatar item-left>
-        <img src="{{frappe.img}}">
+        <img src="{{item.img}}">
       </ion-avatar>
-      <h2>{{frappe.name}}</h2>
+      <h2>{{item.name}}</h2>
       <p>La rutina que no pasa de moda</p>
     </ion-item>
   </ion-list>

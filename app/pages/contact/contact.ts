@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {Modal, NavController} from 'ionic-angular';
 import {Coffes} from '../../providers/coffes/coffes';
+import {ModalContainsPage} from '../modal-contains/modal-contains';
 
 @Component({
   templateUrl: 'build/pages/contact/contact.html',
@@ -9,7 +10,7 @@ import {Coffes} from '../../providers/coffes/coffes';
 export class ContactPage {
   public foundFrappe;
   public test = 'hola';
-  constructor(private navController: NavController,
+  constructor(private nav: NavController,
               private service: Coffes) {
 
         this.getFrappe();
@@ -23,5 +24,10 @@ export class ContactPage {
         err => console.error(err),
         () => console.log('getFrappes completed')
     );
+  }
+
+  openModal(item) {
+  let modal = Modal.create(ModalContainsPage, {item});
+  this.nav.present(modal);
   }
 }

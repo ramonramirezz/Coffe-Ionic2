@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {Modal,NavController} from 'ionic-angular';
 import {Coffes} from '../../providers/coffes/coffes';
+import {ModalContainsPage} from '../modal-contains/modal-contains';
 
 @Component({
   templateUrl: 'build/pages/home/home.html',
@@ -8,7 +9,7 @@ import {Coffes} from '../../providers/coffes/coffes';
 })
 export class HomePage {
   public foundCoffe;
-  constructor(private navController: NavController,
+  constructor(private nav: NavController,
               private service: Coffes) {
 
           this.getCoffes();
@@ -22,6 +23,11 @@ export class HomePage {
         err => console.error(err),
         () => console.log('getCoffes completed')
     );
+  }
+
+  openModal(item) {
+  let modal = Modal.create(ModalContainsPage, {item});
+  this.nav.present(modal);
   }
 
 }

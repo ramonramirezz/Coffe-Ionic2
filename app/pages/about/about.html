@@ -6,13 +6,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="about">
+<ion-content class="about">
   <ion-list>
-    <ion-item *ngFor="#cap of foundCap">
+    <ion-item *ngFor="#item of foundCap" (click)='openModal(item)'>
       <ion-avatar item-left>
-        <img src="{{cap.img}}">
+        <img src="{{item.img}}">
       </ion-avatar>
-      <h2>{{cap.name}}</h2>
+      <h2>{{item.name}}</h2>
       <p>La rutina que no pasa de moda</p>
     </ion-item>
   </ion-list>

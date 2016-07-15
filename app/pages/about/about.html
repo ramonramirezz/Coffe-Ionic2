@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>
+      Capuccino
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="about">
+  <ion-list>
+    <ion-item *ngFor="#cap of foundCap">
+      <ion-avatar item-left>
+        <img src="{{cap.img}}">
+      </ion-avatar>
+      <h2>{{cap.name}}</h2>
+      <p>La rutina que no pasa de moda</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

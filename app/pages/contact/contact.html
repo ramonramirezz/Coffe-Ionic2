@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="contact">
+  <ion-list>
+    <!-- <ion-list-header>Follow us on Twitter</ion-list-header> -->
+    <ion-item *ngFor="#frappe of foundFrappe">
+      <ion-avatar item-left>
+        <img src="{{frappe.img}}">
+      </ion-avatar>
+      <h2>{{frappe.name}}</h2>
+      <p>La rutina que no pasa de moda</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
